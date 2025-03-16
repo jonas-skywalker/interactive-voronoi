@@ -3,6 +3,12 @@ let wiggling;
 
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight, 800);
+
+  document.body.style.overflow = 'hidden';
+  document.addEventListener('touchmove', function (event) {
+    event.preventDefault();
+  }, { passive: false });
+  
   voronoi = new Voronoi([[400, 100], [200, 300]]);
   
   let btn = createButton("Wiggle");
